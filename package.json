@@ -4,7 +4,11 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "dev": "cross-env NODE_ENV=DEV electron .",
+    "package": "electron-builder",
+    "build": "nuxt build"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +21,25 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.0.6"
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^4.0.6",
+    "electron-builder": "^20.38.5",
+    "electron-devtools-installer": "^2.2.4",
+    "eslint": "^5.15.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2"
+  },
+  "build": {
+    "appId": "app.id",
+    "directories": {
+      "buildResources": "static"
+    }
+  },
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "nuxt": "^2.4.5",
+    "vue-video-player": "^5.0.2"
   }
 }
